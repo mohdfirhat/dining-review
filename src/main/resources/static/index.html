@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet" />
+    <title>Dining Review Application</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Dining Review Api Page</h1>
+    </header>
+    <main>
+      <div class="element-container">
+        <h2>User</h2>
+        <h3>Users Inventory</h3>
+        <div id="usersList" class="users-list">
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>CITY</th>
+                <th>STATE</th>
+                <th>ZIPCODE</th>
+                <th>PeanutAllergy</th>
+                <th>EggAllergy</th>
+                <th>DairyAllergy</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <!--will be updated by userApi-->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ADD USER -->
+        <h3>Create User</h3>
+        <form id="addUserForm">
+          <div class="user-form-container">
+            <div>
+              <div class="form-element">
+                <label for="name">Name</label>
+                <input type="text" name="name" />
+              </div>
+              <div class="form-element">
+                <label for="city">City</label>
+                <input type="text" name="city" />
+              </div>
+              <div class="form-element">
+                <label for="state">State</label>
+                <input type="text" name="state" />
+              </div>
+              <div class="form-element">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" name="zipcode" />
+              </div>
+            </div>
+            <div>
+              <div class="form-element">
+                <label for="hasPeanutAllergy">Has Peanut Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasPeanutAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasPeanutAllergy" value="true" />Yes
+                </div>
+              </div>
+              <div class="form-element">
+                <label for="hasEggAllergy">Has Egg Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasEggAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasEggAllergy" value="true" />Yes
+                </div>
+              </div>
+              <div class="form-element">
+                <label for="hasDairyAllergy">Has Dairy Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasDairyAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasDairyAllergy" value="true" />Yes
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="submit-button" type="button" onclick="addUser()">
+            Create User
+          </button>
+        </form>
+
+        <!-- UPDATE USER -->
+        <h3>Update User</h3>
+        <form id="updateUserForm">
+          <div class="user-form-container">
+            <div>
+              <div class="form-element">
+                <label for="updateUserNameList">
+                  Choose user to update(By Name):
+                <label>
+                <select
+                  name="userToUpdate"
+                  id="updateUserNameList"
+                  onchange="getUserByName()">
+                  <!--userApi will update latest userId-->
+                </select>
+              </div>
+              <div class="form-element">
+                <label for="city">City</label>
+                <input type="text" name="city" />
+              </div>
+              <div class="form-element">
+                <label for="state">State</label>
+                <input type="text" name="state" />
+              </div>
+              <div class="form-element">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" name="zipcode" />
+              </div>
+            </div>
+            <div>
+              <div class="form-element">
+                <label for="hasPeanutAllergy">Has Peanut Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasPeanutAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasPeanutAllergy" value="true" />Yes
+                </div>
+              </div>
+              <div class="form-element">
+                <label for="hasEggAllergy">Has Egg Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasEggAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasEggAllergy" value="true" />Yes
+                </div>
+              </div>
+              <div class="form-element">
+                <label for="hasDairyAllergy">Has Dairy Allergy?</label>
+                <div>
+                  <input
+                    type="radio"
+                    name="hasDairyAllergy"
+                    value="false"
+                    checked />No
+                  <input type="radio" name="hasDairyAllergy" value="true" />Yes
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="submit-button" type="button" onclick="updateUser()">
+            Update User
+          </button>
+        </form>
+
+        <!-- DELETE USER -->
+        <h3>Delete User</h3>
+        <form id="deleteUserForm">
+          <div>
+            <label for="userIdList">Choose user to delete(By ID):</label>
+            <select name="userToDelete" id="userIdList">
+              <!--userApi will update latest userId-->
+            </select>
+          </div>
+          <button class="submit-button" type="button" onclick="deleteUser()">
+            Delete User
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+<script type="text/javascript" src="js/userApi.js"></script>
+</html>
