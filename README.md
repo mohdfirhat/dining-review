@@ -18,4 +18,4 @@ It has a static HTML page where user is able to POST,PUT and DELETE data into th
 When DiningApplication.java is running, open up your browser http://localhost:4001/ .
 You wil be able to simple User Table containing all the User available in the H2 database.
 You will also be able to Create, Update and Delete User and the data will be reflected.
-User will also be able to view the database at http://localhost:4001/h2-console .(username="" password="").
+You will also be able to view the database at http://localhost:4001/h2-console .(username="" password="").
